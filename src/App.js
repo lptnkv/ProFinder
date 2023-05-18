@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Index from "./pages";
 import Register from "./pages/register";
+import JobsPage from "./pages/jobsPage"
 
 function App() {
     return (
@@ -10,9 +11,9 @@ function App() {
             <Router>
                 <Header />
                 <Routes>
-                    <Route path="/" element={Index}/>
-                    <Route path="jobs" element={<>here will be jobs</>} />
-                    <Route path="/register" element={Register} />
+                    <Route path="/" Component={Index}/>
+                    <Route path="/jobs" Component={JobsPage} />
+                    <Route path="/register" Component={Register} />
                 </Routes>
             </Router>
             
