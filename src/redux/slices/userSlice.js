@@ -2,12 +2,17 @@ let initialState = [
     {
         id: 1,
         name: "Kirill",
-        isSpecialist: false
+        role: "user"
     },
     {
         id: 2,
-        name: "",
-        isSpecialist: true
+        name: "profi",
+        role: "specialist"
+    },
+    {
+        id: 3,
+        name: "admin",
+        role: "admin"
     }
 ]
 
