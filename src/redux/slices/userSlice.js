@@ -23,7 +23,6 @@ export default function jobsReducer(state = initialState, action) {
         }
         case 'users/removeUser': {
             return state.filter((item) => item.id !== action.payload)
-
         }
         default:
             return state

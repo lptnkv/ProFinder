@@ -10,8 +10,10 @@ export default function Header(props) {
         <nav>
             <Link to="/">Главная</Link>
             <Link to="/jobs">Услуги</Link>
-            {currentUser &&
+            {currentUser && <>
+                <Link to="/create">Предложить услугу</Link>
                 <Link to="/logout">Выход</Link>
+            </>
             }
             {!currentUser && <>
                 <Link to="/login">Вход</Link>

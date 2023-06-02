@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import axios from "axios";
 import Cookies from "universal-cookie"
 import styles from "../styles/login.module.css"
@@ -9,13 +11,15 @@ const cookies = new Cookies();
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+    const dispatch = useDispatch()
     
     const handleSubmit = (e) => {
         e.preventDefault();
         
         const configuration = {
             method: "post",
-            url: "http://127.0.0.1/login",
+            url: "http://127.0.0.1:3001/login",
             data: {
                 email,
                 password,
@@ -28,6 +32,8 @@ export default function Login() {
                     path: "/",
                 });
                 console.log(result.data.token);
+                dispatch({type: 'auth/login', payload: {email: email, token: result.data.token}});
+                navigate('/index');
             })
             .catch((error) => {
                 error = new Error();

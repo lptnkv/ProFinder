@@ -40,6 +40,9 @@ export default function jobsReducer(state = initialState, action) {
         case 'jobs/removeJob': {
             return state.filter((item, index) => index !== action.payload)
         }
+        case 'jobs/setJobs': {
+            return action.payload
+        }
         default:
             return state
     }

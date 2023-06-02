@@ -3,13 +3,13 @@ let initialState = null
 export function authReducer(state = initialState, action) {
     switch (action.type) {
         case 'auth/login': {
-            return action.payload
+            return action.payload;
         }
         case 'auth/logout': {
-            return null
+            return null;
         }
         default: {
-            return state
+            return state;
         }
     }
 }
