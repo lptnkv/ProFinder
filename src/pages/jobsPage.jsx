@@ -1,7 +1,6 @@
 import JobsList from "../components/JobsList";
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
 import axios from "axios";
 
 export default function JobsPage() {

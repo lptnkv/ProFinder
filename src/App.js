@@ -8,6 +8,7 @@ import JobsPage from "./pages/jobsPage"
 import SingleJobPage from "./pages/singleJobPage";
 import UserPage from "./pages/userPage";
 import Logout from "./pages/logoutPage";
+import CreateJobPage from "./pages/createJobPage";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/register" Component={Register} />
                     <Route path="/jobs/:jobId" Component={SingleJobPage} />
                     <Route path="/users/:userId" Component={UserPage}/>
+                    <Route path="/create" Component={CreateJobPage}/>
                 </Routes>
             </Router>
             

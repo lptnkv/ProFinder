@@ -12,7 +12,7 @@ export default function Register() {
         e.preventDefault();
         const configuration = {
             method: "post",
-            url: "http://127.0.0.1/register",
+            url: "http://127.0.0.1:3001/register",
             data: {
                 email,
                 password,
