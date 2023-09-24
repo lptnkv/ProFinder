@@ -18,6 +18,7 @@ export default function JobsPage() {
             setJobs(jobsFetchResult.data);
             dispatch({type: 'jobs/setJobs', payload: jobsFetchResult.data})
         })
+        .catch(err => console.log(err))
     }, [])
     return (
         <>
