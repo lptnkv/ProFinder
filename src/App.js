@@ -9,6 +9,7 @@ import SingleJobPage from "./pages/singleJobPage";
 import UserPage from "./pages/userPage";
 import Logout from "./pages/logoutPage";
 import CreateJobPage from "./pages/createJobPage";
+import EditJobPage from "./pages/editJobPage"
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path="/" Component={Index}/>
+                    <Route path="/index" Component={Index}/>
                     <Route path="/jobs" Component={JobsPage} />
                     <Route path="/login" Component={Login} />
                     <Route path="/logout" Component={Logout} />
@@ -24,6 +26,7 @@ function App() {
                     <Route path="/jobs/:jobId" Component={SingleJobPage} />
                     <Route path="/users/:userId" Component={UserPage}/>
                     <Route path="/create" Component={CreateJobPage}/>
+                    <Route path="/edit/:jobId" Component={EditJobPage}/>
                 </Routes>
             </Router>
             

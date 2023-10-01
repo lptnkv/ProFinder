@@ -30,8 +30,20 @@ export default function UserPage(props) {
         })
     }, [])
     return (<>
-        <h1>{user.name}</h1>
-        <p>Список услуг</p>
-        <JobsList jobs={jobs}/>
+        <h1>Профиль пользователя {user.name}</h1>
+            {jobs?.length != 0 && (
+                <>
+                <p>Список услуг</p>
+                <JobsList jobs={jobs}/>
+                </>
+            )
+            }  
+            {jobs?.length == 0 && (
+                <>
+                <p>Пользователь еще не предоставил услуги</p>
+                </>
+            )
+            }  
+        
     </>)
 }

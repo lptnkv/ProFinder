@@ -5,6 +5,8 @@ import axios from "axios";
 
 export default function SingleJobPage() {
     const dispatch = useDispatch();
+    const currUser = useSelector(state => state.auth)
+    console.log({currUser})
     const { jobId } = useParams();
     console.log(jobId);
     const [job, setJob] = useState(
@@ -52,9 +54,18 @@ export default function SingleJobPage() {
                             {job?.phone_number || "номер"}
                         </a>
                     </p>
-                    <Link to={"/users/" + job?.creator_id}>
+                    <p>
+                        Написать:{" "}
+                        <a href={"tel:" + job?.email || "email"}>
+                            {job?.email || "email"}
+                        </a>
+                    </p>
+                    <Link to={"/users/" + job?._creator}>
                         Профиль специалиста
                     </Link>
+                    {currUser?.id == job?._creator && (
+                        <Link to={"/edit/"+job?._id}>Редактировать</Link>
+                    )}
                 </>
             )}
         </>

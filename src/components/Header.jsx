@@ -14,6 +14,7 @@ export default function Header(props) {
             <Link to="/jobs">Услуги</Link>
             {currentUser && <>
                 <Link to="/create">Предложить услугу</Link>
+                <Link to={"/users/"+currentUser.id}>Профиль</Link>
                 <Link to="/logout">Выход</Link>
             </>
             }
@@ -22,6 +23,7 @@ export default function Header(props) {
                 <Link to="/register">Регистрация</Link>
             </>
             }
+            
 
         </nav>
     )

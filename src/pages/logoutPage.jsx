@@ -7,7 +7,7 @@ export default function Logout() {
     const navigate = useNavigate();
     useEffect(() => {
         dispatch({type: "auth/logout"});
-        navigate("/login")
+        navigate("/")
     }, [])
     
     return (<></>)

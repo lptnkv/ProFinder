@@ -32,7 +32,7 @@ export default function Login() {
                     path: "/",
                 });
                 console.log(result.data.token);
-                dispatch({type: 'auth/login', payload: {email: email, token: result.data.token}});
+                dispatch({type: 'auth/login', payload: {email: email, token: result.data.token, id: result.data.id, name: result.data.name}});
                 navigate('/index');
             })
             .catch((error) => {
