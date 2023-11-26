@@ -32,12 +32,11 @@ export default function EditJobPage() {
             };
             axios(jobConfig)
                 .then((jobFetchResult) => {
-                    console.log(jobFetchResult);
                     setJob(jobFetchResult.data);
-                    dispatch({
-                        type: "jobs/addJob",
-                        payload: jobFetchResult.data,
-                    });
+                    setJobName(job.name);
+                    setDescr(job.descr);
+                    setPrice(job.price);
+                    console.log()
                 })
                 .catch((err) => {
                     console.log(err);
@@ -49,7 +48,7 @@ export default function EditJobPage() {
         event.preventDefault();
         const configuration = {
             method: "PATCH",
-            url: "http://127.0.0.1:3001/editJob",
+            url: "http://127.0.0.1:3001/jobs",
             data: {
                 jobName,
                 jobPrice,
@@ -70,12 +69,13 @@ export default function EditJobPage() {
     return (
         <>
             <h1>Редактирование</h1>
-            <form action="/editJob" method="PATCH" className={styles.form}>
+            <form action="/jobs" method="PATCH" className={styles.form}>
                 <input
                     type="text"
                     name="jobName"
                     id="jobName"
                     placeholder="Название"
+                    value={jobName}
                     className={styles.jobNameInput}
                     onChange={(e) => setJobName(e.target.value)}
                 />
@@ -84,6 +84,7 @@ export default function EditJobPage() {
                     id="jobDescr"
                     cols="30"
                     rows="10"
+                    value={jobDescr}
                     placeholder="Описание"
                     onChange={(e) => setDescr(e.target.value)}
                 ></textarea>
@@ -92,6 +93,7 @@ export default function EditJobPage() {
                     name="jobPrice"
                     id="jobPrice"
                     placeholder="Цена"
+                    value={jobPrice}
                     onChange={(e) => setPrice(e.target.value)}
                 />
                 <input

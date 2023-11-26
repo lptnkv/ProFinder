@@ -25,7 +25,7 @@ export default function CreateJobPage({props}) {
         event.preventDefault();
         const configuration = {
             method: "post",
-            url: "http://127.0.0.1:3001/addJob",
+            url: "http://127.0.0.1:3001/jobs",
             data: {
                 jobName,
                 jobPrice,
